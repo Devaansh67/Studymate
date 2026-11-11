@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>StudyMate</title>
+    </head>
+    <body>
+        <div class="app">
+            <!-- Side bar -->
+             <aside class="sidebar">
+                <div class="logo">
+                    📚
+                    <h2>Study<br>Mate</h2>
+                </div>
+                <section class="stats" aria-label="Homework statistics">
+                    <div class="stat-card">
+                        <div class="stat-icon purple">📋</div>
+                        <h2 id="totalHomeworkCount">0</h2>
+                        <p>Total Homework</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon yellow">⏰</div>
+                        <h2 id="dueSoonCount">0</h2>
+                        <p>Due Soon</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon red">!</div>
+                        <h2 id="overdueCount">0</h2>
+                        <p>Overdue</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">✅</div>
+                        <h2 id="completedCount">0</h2>
+                        <p>Completed</p>
+                    </div>
+                </section>
+                <div class="hero-card">
+                    <div class="trophy">
+                        🏆 
+                    </div>
+                    <h3>
+                        Homework Hero
+                    </h3>
+                    <p id="heroLevel">
+                        Level 1
+                    </p>
+                    <div class="progress" role="progressbar" aria-label="Experience progress" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0">
+                        <div class="progress-bar" id="heroProgressBar"></div>
+                    </div>
+                    <small id="heroXp">0 / 1000 XP</small>
+                </div>
+                
+             </aside>
+
+             <main class="main">
+                <header>
+                    <div>
+                        <h1>
+                            Welcome Back, DP! 🖐️
+                        </h1>
+                        <p>Stay organized and keep up the great work!</p>
+                        <p id="storageStatus" class="storage-status" role="status" hidden></p>
+                    </div>
+                    <button class="Add-Homework" id="addHomeworkButton" type="button">
+                        + Add Homework
+                    </button>
+                </header>
+
+                <!-- CONTENT Grid -->
+                <section class="content-grid">
+                    <div class="homework-section">
+                        <div class="section-title">
+                            <h2>
+                               Upcoming Homework
+                            </h2>
+                            <button id="viewAllHomework" type="button">
+                                View All
+                            </button>
+                        </div>
+                        <div class="homework-list" id="homeworkList">
+
+                        </div>
+
+                        <!-- Motivational Message -->
+                    
+                        <div class="motivation">
+                            <div class="star">
+                                ⭐
+                            </div>
+                            <div>
+                                <h3>
+                                    You've got this! keep going!💪
+                                </h3>
+                                <p>
+                                    Complete your tasks and level up!
+                                </p>
+                            </div>
+                            <div class="books">
+                            📚
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+
+                   
+                    <!-- CALENDAR -->
+                    <div class="calendar-section">
+                        <!-- Calendar Header -->
+                        <div class="calendar-header">
+                            <button id="previousMonth">‹</button>
+
+                            <h2 id="monthYear"></h2>
+
+                            <button id="nextMonth">›</button>
+
+                            <button class="today-button" id="todayButton">
+                                Today
+                            </button>
+
+                        </div>
+
+
+                        <!-- Calendar -->
+                        <div class="calendar" id="calendar">
+
+                            <!-- JavaScript will create the calendar here -->
+
+                        </div>
+
+
+                        <!-- Selected Day Homework -->
+                        <div class="selected-homework">
+
+                            <h2 id="selectedDate">
+                                Select a date
+                            </h2>
+
+                            <div id="selectedTasks">
+                                <p>
+                                    Click a date to see homework.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+             </main>
+            
+        </div>
+
+        <dialog class="homework-dialog" id="homeworkDialog" aria-labelledby="homeworkDialogTitle">
+            <form id="homeworkForm">
+                <h2 id="homeworkDialogTitle">Add Homework</h2>
+
+                <label for="homeworkTitle">Title</label>
+                <input id="homeworkTitle" name="title" type="text" maxlength="100" required>
+
+                <label for="homeworkSubject">Subject</label>
+                <select id="homeworkSubject" name="subject" required>
+                    <option value="">Choose a subject</option>
+                    <option>Math</option>
+                    <option>Science</option>
+                    <option>English</option>
+                    <option>Social Studies</option>
+                    <option>History</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="homeworkDate">Due date</label>
+                <input id="homeworkDate" name="date" type="date" required>
+
+                <label for="homeworkPriority">Priority</label>
+                <select id="homeworkPriority" name="priority" required>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+
+                <label for="homeworkNotes">Notes <span>(optional)</span></label>
+                <textarea id="homeworkNotes" name="notes" rows="3" maxlength="500"></textarea>
+
+                <div class="homework-dialog-actions">
+                    <button class="homework-cancel" id="cancelHomeworkButton" type="button">Cancel</button>
+                    <button class="homework-submit" type="submit">Add Homework</button>
+                </div>
+            </form>
+        </dialog>
+
+        <script src="sketch.js"></script>
+
+        <!-- Footer space -->
+        <footer class="footer">
+        
+            <p> © 2026 StudyMate          Made for students who want to stay organized 📚✨</p>
+        </footer>
+    </body>
+    
+</html>
